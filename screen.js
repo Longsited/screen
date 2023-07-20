@@ -326,25 +326,25 @@ const { createFFmpeg, fetchFile } = FFmpeg;
 const ffmpeg = createFFmpeg({ log: true });
 
 const convertVideo = async () => {
-    const inputFile = document.getElementById('upload').files[0];
-    const outputType = document.getElementById('outputType').value;
-
-    if (inputFile) {
-        await ffmpeg.load();
-        ffmpeg.FS('writeFile', inputFile.name, await fetchFile(inputFile));
-
-        if (outputType === 'gif') {
-            await ffmpeg.run('-i', inputFile.name, 'output.gif');
-            const data = ffmpeg.FS('readFile', 'output.gif');
-            const video = document.getElementById('player');
-            video.src = URL.createObjectURL(new Blob([data.buffer], { type: 'image/gif' }));
-        } else if (outputType === 'mp4') {
-            await ffmpeg.run('-i', inputFile.name, 'output.mp4');
-            const data = ffmpeg.FS('readFile', 'output.mp4');
-            const video = document.getElementById('player');
-            video.src = URL.createObjectURL(new Blob([data.buffer], { type: 'video/mp4' }));
-        }
+  const inputFile = document.getElementById('upload').files[0];
+  const outputType = document.getElementById('outputType').value;
+  
+  if (inputFile) {
+    await ffmpeg.load();
+    ffmpeg.FS('writeFile', inputFile.name, await fetchFile(inputFile));
+    
+    if (outputType === 'gif') {
+      await ffmpeg.run('-i', inputFile.name, 'output.gif');
+      const data = ffmpeg.FS('readFile', 'output.gif');
+      const video = document.getElementById('player');
+      video.src = URL.createObjectURL(new Blob([data.buffer], { type: 'image/gif' }));
+    } else if (outputType === 'mp4') {
+      await ffmpeg.run('-i', inputFile.name, 'output.mp4');
+      const data = ffmpeg.FS('readFile', 'output.mp4');
+      const video = document.getElementById('player');
+      video.src = URL.createObjectURL(new Blob([data.buffer], { type: 'video/mp4' }));
     }
+  }
 };
 
 document.getElementById('convertBtn').addEventListener('click', convertVideo);
