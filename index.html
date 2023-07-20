@@ -5,41 +5,60 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <div>
-        <button id="startBtn">Start Recording</button>
-    </div>
+<div>
+<button id="startBtn">Start Recording</button>
 
-    <div id="wrapper">
-        <div id="topBuffer" class="buffer"></div>
-        <div id="leftBuffer" class="buffer"></div>
-        <div id="cropContainer">
-            <button id="cropAdjust1" class="corner-button" draggable="true"></button>
-            <button id="cropAdjust2" class="corner-button" draggable="true"></button>
-            <button id="cropAdjust3" class="corner-button" draggable="true"></button>
-            <button id="cropAdjust4" class="corner-button" draggable="true"></button>
-        </div>
-        <div id="rightBuffer" class="buffer"></div>
-        <div id="bottomBuffer" class="buffer"></div>
-        <div>
-            <video id="player" controls></video>
-        </div>
-    </div>
+</div>
 
-    <div>
-        <input type="range" id="trimSlider" step="1">
-        <input type="range" id="trimSlider2" step="1">
-    </div>
 
-    <div>
-        <button id="cropButton">Crop</button>
-        <button id="applyButton">Apply Changes</button>
-    </div>
 
-    <div>
-        <input type="file" id="upload">
-    <script src="ffmpeg.min.js"></script>
-        <script src="screen.js"></script>
+<div id="wrapper">
 
-    </div>
+  <div id="topBuffer" class="buffer"></div>
+
+  <div id="leftBuffer" class="buffer"></div>
+
+  <div id="cropContainer">
+    <button id="cropAdjust1" class="corner-button" draggable="true"></button>
+    <button id="cropAdjust2" class="corner-button" draggable="true"></button>
+    <button id="cropAdjust3" class="corner-button" draggable="true"></button>
+    <button id="cropAdjust4" class="corner-button" draggable="true"></button>
+  </div>
+
+  <div id="rightBuffer" class="buffer"></div>
+
+  <div id="bottomBuffer" class="buffer"></div>
+<div>
+  <video id="player" controls></video>
+</div>
+</div>
+<div>
+  <input type="range" id="trimSlider" step="1">
+  <input type="range" id="trimSlider2" step="1">
+</div>
+<div>
+
+<button id="cropButton">Crop</button>
+
+  <button id="applyButton">Apply Changes</button>
+</div>
+
+</div>
+</div>
+
+
+<div>
+
+  <input type="file" id="upload">
+
+  <script src="ffmpeg.min.js"></script>
+  <script src="screen.js"></script>
+<button id="convertBtn">Convert File</button>
+<select id="outputType">
+  <option value="gif">GIF</option>
+  <option value="mp4">MP4</option>
+</select>
+</div>
+</div>
 </body>
 </html>
