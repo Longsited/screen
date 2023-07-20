@@ -1,0 +1,71 @@
+body {
+    display: flex;
+    max-width: 950px;
+    padding: 20px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+    background-size: cover;
+}
+
+#wrapper {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+}
+
+#cropContainer {
+    display: block;
+    border: 2px solid blue;
+    background-color: none;
+    z-index: 3;
+    position: absolute;
+}
+
+#player {
+    display: block;
+    position: relative;
+}
+
+.corner-button {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+}
+
+#cropAdjust1 {
+    top: -10px;
+    left: -10px;
+}
+
+#cropAdjust2 {
+    top: -10px;
+    right: -10px;
+}
+
+#cropAdjust3 {
+    bottom: -10px;
+    left: -10px;
+}
+
+#cropAdjust4 {
+    bottom: -10px;
+    right: -10px;
+}
+
+#trimSlider {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-top: 90%;
+    position: absolute;
+    z-index: 3;
+}
+
+.buffer {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 0;
+    position: absolute;
+    z-index: 3;
+}
